@@ -42,7 +42,6 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=espresso
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_USES_LEGACY_ADB_INTERFACE := true
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
 ifneq (,$(strip $(wildcard \
 $(TARGET_KERNEL_SOURCE)/drivers/gpu/ion/ion_page_pool.c \
