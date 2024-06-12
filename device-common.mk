@@ -55,6 +55,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
     libgpsd-compat \
+    libstlport \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.xml:system/etc/gps.xml
