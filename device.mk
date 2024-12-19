@@ -19,6 +19,17 @@ $(call inherit-product, device/samsung/espressowifi/device-common.mk)
 
 LOCAL_PATH := device/samsung/espressowifi
 
+# define the prebuilt kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+  LOCAL_KERNEL := device/samsung/espresso3g-kernel/zImage
+else
+  LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+# we defined the kernel, now let's put in PRODUCT_COPY_FILES
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
 # This is a wifi-only device
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=wifi-only
